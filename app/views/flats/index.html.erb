@@ -1,0 +1,23 @@
+<%= render 'header', flat: @flat %>
+
+<h1>All our Flats</h1>
+
+<div class="container">
+  <% @flats.each do |flat| %>
+    <div class="card">
+      <div class="summary">
+        <h2> <%= flat.name %> </h2>
+        <p> <%= flat.address %> </p>
+        <p> hosts: <%= flat.number_of_guests %> </p>
+        <p> price per night: <%= flat.price_per_night %> </p>
+      </div>
+      <div class="links">
+        <p> <%= link_to "More info", flat_path(flat) %> </p>
+        <p> <%= link_to "Edit", edit_flat_path(flat) %> </p>
+        <p> <%= link_to "Remove", flat_path(flat),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %> </p>
+      </div>
+    </div>
+  <% end %>
+</div>

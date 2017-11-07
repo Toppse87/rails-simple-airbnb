@@ -1,0 +1,28 @@
+<%= render 'header', flat: @flat %>
+
+<div class="boxes name_address col-xs-12 col-sm-4 col-lg-6">
+  <h1> <%= @flat.name %> </h1>
+  <p> <%= @flat.address %> </p>
+</div>
+
+<div class="boxes booking">
+  <h3>Book this place</h3>
+  <form action=""></form>
+    <label for="From">From:</label>
+    <input type="text" class="form-control" id="From" placeholder="12/10/2017">
+    <label for="To">To:</label>
+    <input type="text" class="form-control" id="To" placeholder="18/10/2017">
+    <input type="submit" value="Book" class="btn btn-primary">
+  </form>
+</div>
+
+<div class="boxes a bit more">
+  <h2> A bit more about this flat </h2>
+  <p><%= @flat.description %></p>
+</div>
+
+<div class="boxes details">
+  <h2> Details </h2>
+  <p> hosts: <%= @flat.number_of_guests %> </p>
+  <p> price per night: <%= @flat.price_per_night %> </p>
+</div>
